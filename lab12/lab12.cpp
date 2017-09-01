@@ -17,16 +17,16 @@ using namespace std;
     {
         string exitProgram = "No";
         
-        while (exitProgram == "No" || exitProgram == "no" || exitProgram == "NO" || exitProgram == "nO")
+        while (exitProgram == "No" || exitProgram == "no" || exitProgram == "NO" || exitProgram == "nO") // while loop to replay program
         {
             string chooseNew = "Yes";
-            while (chooseNew == "Yes" || chooseNew == "yEs" || chooseNew == "yeS" || chooseNew == "YEs" || chooseNew == "yES" || chooseNew == "yes" || chooseNew == "YES" || chooseNew == "YeS")
+            while (chooseNew == "Yes" || chooseNew == "yEs" || chooseNew == "yeS" || chooseNew == "YEs" || chooseNew == "yES" || chooseNew == "yes" || chooseNew == "YES" || chooseNew == "YeS") // Another while loop to replay program
             {
                 string keyboardSymbol;
-                cout << "Type \"Rabbit\", \"Dragon\", \"House\", or \"Bradley\" for different pictures" << endl;
+                cout << "Type \"Rabbit\", \"Dragon\", \"House\", or \"Bradley\" for different pictures" << endl; //Choose ascii art
                 cin >> keyboardSymbol;
                 
-                if (keyboardSymbol == "dragon" || keyboardSymbol == "Dragon")
+                if (keyboardSymbol == "dragon" || keyboardSymbol == "Dragon") // opens Dragon ascii art
                 
                     {
                         cout << "                                       .." << endl;
@@ -68,21 +68,21 @@ using namespace std;
                         cout << "                                ) ) )           )  ) )            ` \"'" << endl;
                         
                         
-                        cout << "If you would like to choose" << endl << "a new picture, type \"Yes\"" << endl;
+                        cout << "If you would like to choose" << endl << "a new picture, type \"Yes\"" << endl; // Choose new ascii art
                         cin >> chooseNew;
                     }
                     
-                if (keyboardSymbol == "rabbit" || keyboardSymbol == "Rabbit")
+                if (keyboardSymbol == "rabbit" || keyboardSymbol == "Rabbit") // opens Rabbit ascii art
                 
                     {
                         cout << " (\\_/)" << endl;
                         cout << "('. ')" << endl;
                         cout <<"(\")-(\")" << endl;
-                        cout << "If you would like to choose" << endl << "a new picture, type \"Yes\"" << endl;
+                        cout << "If you would like to choose" << endl << "a new picture, type \"Yes\"" << endl; // Choose new ascii art
                         cin >> chooseNew;
                     }
                     
-                if (keyboardSymbol == "house" || keyboardSymbol == "House")
+                if (keyboardSymbol == "house" || keyboardSymbol == "House") // opens House ascii art
                     
                     {
                         cout << "                /▼▼▼▼▼▼▼▼▼▼▼▼▼▲▼▼▼▼▼▼▼▼▼▼▼▼▼\\   " << endl;
@@ -105,7 +105,7 @@ using namespace std;
                         cin >> chooseNew;
                     }
                     
-                if (keyboardSymbol == "bradley" || keyboardSymbol == "Bradley")
+                if (keyboardSymbol == "bradley" || keyboardSymbol == "Bradley") // opens name "BRADLEY" ascii art
                 
                     {
                         cout << "BBBBBBBB        RRRRRRR                 A             DDDDDDDD          LL              EEEEEEEEEE     YY      YY     " << endl;
@@ -118,12 +118,12 @@ using namespace std;
                         cout << "BB      BB      RR      RR       AA           AA      DD      DD        LL              EE                 YY         " << endl;
                         cout << "BBBBBBBBB       RR       RR     AA             AA     DDDDDDDD          LLLLLLLLLLL     EEEEEEEEEE         YY         " << endl << endl;
                         
-                        cout << "If you would like to choose" << endl << "a new picture, type \"Yes\"" << endl << endl;
+                        cout << "If you would like to choose" << endl << "a new picture, type \"Yes\"" << endl << endl; // Choose new ascii art
                         cin >> chooseNew;
                     }
                 }
                 
-            if (chooseNew == "No" || chooseNew == "nO" || chooseNew == "no" || chooseNew == "NO")
+            if (chooseNew == "No" || chooseNew == "nO" || chooseNew == "no" || chooseNew == "NO") // Choose to Exit Program
             
                 {
                     cout << "Type \"Yes\" to Exit Program:" << endl << endl;
