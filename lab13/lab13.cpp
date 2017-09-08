@@ -41,7 +41,7 @@ using namespace std;
                             cout << "Enter year" << endl;
                             cin >> newYear;
                         
-                            population = (newYear - year) * 2628000 + 325779096; 
+                            population = (newYear - year) * 2628000 + currentPopulation; 
                             cout << "The Population in year " << newYear << " will be " << population << "." << endl;
                         
                             cout << "Would you like to enter new year?" << endl;

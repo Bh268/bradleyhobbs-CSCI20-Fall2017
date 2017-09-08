@@ -41,7 +41,7 @@ using namespace std;
                         cin >> inputMoney;
                         cout << endl;
                         
-                        money = inputMoney;
+                        money = inputMoney; 
                         
                         quarters = (money - (money % 25)) / 25;
                         
@@ -65,7 +65,7 @@ using namespace std;
                         
                         cout << "The total is $" << setprecision(2) << fixed << moneyAfterTax << "." << endl << endl;
                         
-                        cout << "Would you like to run the program again?" << endl;
+                        cout << "Would you like to run the program again?" << endl; // Playagain loop
                         cin >> playAgain;
                         cout << endl;
                         
@@ -90,3 +90,11 @@ using namespace std;
             }
             
         }
+
+/* 
+    You have entered (inputMoney) cents.
+
+    That was (quarters) quarters, (dimes) dimes, (nickels) nickels, and (pennies) pennies.
+
+    Your total is (moneyAfterTax).
+*/
