@@ -100,19 +100,5 @@ using namespace std;
         cout << "     Gross Pay     Net Pay     Total Pay     " << endl;
         cout << "      $" << setprecision(2) << fixed << grossPay << "      $" << setprecision(2) << fixed << netPay << "     $" << setprecision(2) << fixed <<totalPay << "     " << endl;
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
         return 0;
     }
