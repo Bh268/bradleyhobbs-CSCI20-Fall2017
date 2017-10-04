@@ -15,13 +15,22 @@ Created:
 #include <cstdlib>
 using namespace std;
 
-void RandomNumberSwap(int firstNumber,int secondNumber) {
+int RandomNumberFirstNumberSwap(int firstNumber,int secondNumber) {
     int Temp = firstNumber;
     
     firstNumber = secondNumber;
     secondNumber = Temp;
     
-    return;
+    return firstNumber;
+}
+
+int RandomNumberSecondNumberSwap(int firstNumber,int secondNumber) {
+    int Temp = firstNumber;
+    
+    firstNumber = secondNumber;
+    secondNumber = Temp;
+    
+    return secondNumber;
 }
 
 int RandomNumberHighNumberSet(int firstNumber,int secondNumber) {
@@ -54,8 +63,9 @@ int RandomNumberLowNumberSet(int firstNumber,int secondNumber){
 }
 
 double RandomNumberGenerator(int lowNumber,int highNumber) {
+    srand(time(0));
     int RandomNumber = rand() % highNumber + (lowNumber + 1);;
-    srand((unsigned)time(0));
+    
     
     return RandomNumber;
 }
@@ -71,7 +81,7 @@ double Kilograms(int RandomNumber) {
 double Pounds(double Kilograms) {
     int Pounds;
     
-    Pounds = (Kilograms / 0.45359237);
+    Pounds = (Kilograms * 0.45359237);
     Pounds = ceil(Pounds);
     
     return Pounds;
@@ -87,12 +97,15 @@ int main()
     int RandomNumber;
     double kilograms;
     int pounds;
+    int NewsecondNumber;
+    int NewfirstNumber;
     
     cout << "Please Enter Two Numbers." << endl;
     cin >> firstNumber, secondNumber;
     cout << endl;
     
-    RandomNumberSwap(firstNumber,secondNumber);
+    NewfirstNumber = RandomNumberFirstNumberSwap(firstNumber,secondNumber);
+    NewsecondNumber = RandomNumberSecondNumberSwap(firstNumber,secondNumber);
     HighNumber = RandomNumberHighNumberSet(firstNumber, secondNumber);
     LowNumber = RandomNumberLowNumberSet(firstNumber, secondNumber);
     RandomNumber = RandomNumberGenerator(LowNumber, HighNumber);
@@ -100,9 +113,9 @@ int main()
     pounds = Pounds(kilograms);
     
     cout << "RandomNumber: " << RandomNumber << endl;
-    cout << "Pounds: " << Pounds << endl;
-    cout << "Kilograms: " << Kilograms << endl;
-    cout << "Final Pounds: " << Pounds << endl;
+    cout << "Pounds: " << pounds << endl;
+    cout << "Kilograms: " << kilograms << endl;
+    cout << "Final Pounds: " << pounds << endl;
     
     return 0;
     
