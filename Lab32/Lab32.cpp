@@ -29,9 +29,11 @@ int main(){
     cout << "Enter Name:" << endl;
     cin >> FirstName;
     cin >> LastName;
+    cout << endl;
     
     cout << "Enter Filing Status(Single/Married)" << endl;
     cin >> filingStatus;
+    cout << endl;
     if (filingStatus == "Single" || filingStatus == "single"){
         FilingStatusSwitch = 'A';
     }
@@ -49,9 +51,11 @@ int main(){
     
         cout << "Enter Wages" << endl;
         cin >> Wages;
+        cout << endl;
         
         cout << "Enter Withheld" << endl;
         cin >> Withheld;
+        cout << endl;
         
         AGI = (((Withheld + Wages) - PersonalExemption) - SingleDedeuction);
         
@@ -92,9 +96,11 @@ int main(){
     
         cout << "Enter Wages" << endl;
         cin >> Wages;
+        cout << endl;
         
         cout << "Enter Withheld" << endl;
         cin >> Withheld;
+        cout << endl;
         
         AGI = (((Withheld + Wages) - PersonalExemption) - MarriedDeduction);
         
@@ -137,17 +143,39 @@ int main(){
         
         cout << "Name: " << FirstName << " " << LastName << endl;
         cout << "Total Gross Adjusted Income: $" << AGI << endl;
-        cout << FirstName << " " << LastName << " is entitled to a REFUND of $" << refund << endl;
+        cout << FirstName << " " << LastName << " is entitled to a REFUND of $" << setprecision(2) << fixed << refund << endl;
         return 0;
     }
     if (tax > Withheld){
         
         cout << "Name: " << FirstName << " " << LastName << endl;
         cout << "Total Gross Adjusted Income: $" << AGI << endl;
-        cout << "Total Tax Owed: $" << tax << endl;
+        cout << "Total Tax Owed: $" << setprecision(2) << fixed << tax << endl;
         
         return 0;
     }
     
     return 0;
 }
+
+
+// Running /home/ubuntu/workspace/Lab32/Lab32.cpp
+// Enter Name:
+// Joe
+// Vandal
+
+// Enter Filing Status(Single/Married)
+// single
+
+// Enter Wages
+// 12100
+
+// Enter Withheld
+// 250
+
+// Name: Joe Vandal
+// Total Gross Adjusted Income: $1950
+// Joe Vandal is entitled to a REFUND of $195
+
+
+// Process exited with code: 0
