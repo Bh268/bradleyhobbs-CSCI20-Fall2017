@@ -17,10 +17,10 @@ int main(){
                cin >> num;
                
         }
-        if (num < 0){
+        
                 cout << "Sum was " << sum << endl;
                 return 0;
-        }
+        
 }
 
 // Line 15, num should be sum(I changed it)
