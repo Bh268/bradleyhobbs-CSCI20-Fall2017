@@ -37,10 +37,7 @@ TemperatureConverter::TemperatureConverter(double Kelvin){
     return;
 }
 TemperatureConverter::TemperatureConverter(){
-    if (Kelvin_ < 0){
         Kelvin_ = 0.0;
-        
-    }
     return;
 }
 
@@ -84,6 +81,7 @@ double TemperatureConverter::GetTempAsFahrenheit() const{
 }
 
 double TemperatureConverter::GetTempFromKelvin() const{
+    
     return Kelvin_;
 }
 
