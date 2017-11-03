@@ -44,6 +44,7 @@ Arraytools::ArrayTools(int array[],int size){
         ARRAY_[i] = array[i];
     }
     SIZE_ = size;
+    return;
 }
 
 void ArrayTools::Print(){
@@ -106,6 +107,9 @@ int ArrayTools::Search(int search){
     for (i = 0;i < SIZE_; i ++){
         if (ARRAY[i] == search){
             search1 = i;
+        }
+        else{
+            search1 = -1;
         }
     }
     return search1;
