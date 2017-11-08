@@ -69,8 +69,8 @@ int main(){
     int UsersTurnScore = 0;
     int BotTotalScore = 0;
     
-    cout << "Playing Pig, f a 1 is rolled, the player gets 0 points, and if the player decides to stop, " << endl;
-    cout << "the player get points equal to the sum of the numbers rolled since the last 1." << endl;
+    cout << "Playing Pig, if a 1 is rolled, the player gets 0 points, and if the player decides to stop, " << endl;
+    cout << "the player gets points equal to the sum of the numbers rolled since the last 1." << endl;
     cout << "Play continues until one player has a score of 100 or more points. " << endl;
     cout << endl << endl << "x to exit. Press any other key to continue." << endl;
     cin >> startGame;
@@ -80,7 +80,6 @@ int main(){
         return 0;
     }
     else{
-        cout<<"inelse"<< TurnEnd<<endl;
         while (Turn == 1){
             cout << "Press 1 to Roll the die. Press 2 to stop turn" << endl;
             cin >> TurnEnd;

@@ -9,16 +9,18 @@ using namespace std;
 
 int main(){
     int i = 0;
+    int j = 0;
     int ItemInventory[10];
-    string ItemName10];
+    string ItemName[10];
     double ItemPrice[10];
     int ItemNumber[10];
-    string ShoppingCart;
-    int ShoppingCartPrice;
-    int ItemAmount;
+    int ShoppingCartPrice = 0;
+    int ItemAmount = 0;
     string itemName;
-    char DoneShopping = 'y';
-    int itemNumber;
+    char DoneShopping = 'n';
+    int itemNumber = 0;
+    int AmountOfItems = 0;
+    char OutOfStock = 'y';
     
     ItemNumber[0] = 0;
     ItemNumber[1] = 1;
@@ -30,60 +32,94 @@ int main(){
     ItemNumber[7] = 7;
     ItemNumber[8] = 8;
     ItemNumber[9] = 9;
-    ItemInventory[0] = 10;
-    ItemInventory[1] = 10;
-    ItemInventory[2] = 10;
-    ItemInventory[3] = 10;
-    ItemInventory[4] = 10;
-    ItemInventory[5] = 10;
-    ItemInventory[6] = 10;
-    ItemInventory[7] = 10;
-    ItemInventory[8] = 10;
-    ItemInventory[9] = 10;
+    ItemInventory[0] = 100;
+    ItemInventory[1] = 100;
+    ItemInventory[2] = 100;
+    ItemInventory[3] = 100;
+    ItemInventory[4] = 100;
+    ItemInventory[5] = 100;
+    ItemInventory[6] = 100;
+    ItemInventory[7] = 100;
+    ItemInventory[8] = 100;
+    ItemInventory[9] = 100;
     ItemName[0] = "Shirt";
-    ItemName[1] = "Pants";
-    ItemName[2] = "Socks";
-    ItemName[3] = "Hats";
-    ItemName[4] = "Beanies";
-    ItemName[5] = "Jeans";
-    ItemName[6] = "Sweaters";
-    ItemName[7] = "Earbuds";
-    ItemName[8] = "Sweats";
-    ItemName[9] = "Watches";
+    ItemName[1] = "Pant";
+    ItemName[2] = "Sock";
+    ItemName[3] = "Hat";
+    ItemName[4] = "Beanie";
+    ItemName[5] = "Jean";
+    ItemName[6] = "Sweater";
+    ItemName[7] = "Earbud";
+    ItemName[8] = "Sweat";
+    ItemName[9] = "Watche";
     ItemPrice[0] = 10.00;
     ItemPrice[1] = 15.00;
     ItemPrice[2] = 20.00;
-    ItemPrice[3] = 10.00;
-    ItemPrice[4] = 10.00;
-    ItemPrice[5] = 10.00;
-    ItemPrice[6] = 10.00;
-    ItemPrice[7] = 10.00;
-    ItemPrice[8] = 10.00;
-    ItemPrice[9] = 10.00;
+    ItemPrice[3] = 25.00;
+    ItemPrice[4] = 30.00;
+    ItemPrice[5] = 35.00;
+    ItemPrice[6] = 40.00;
+    ItemPrice[7] = 45.00;
+    ItemPrice[8] = 50.00;
+    ItemPrice[9] = 55.00;
     
     
     cout << "Here is the current Items for sale, their prices, the Item Number, and the amount of each Item that we have in stock:" << endl;
-    while (DoneShopping == 'y' || DoneShopping == 'Y'){
+    while (DoneShopping == 'n' || DoneShopping == 'N'){
         
         
-        while (i < 10){
-            for (i = 0; i < 10;i++)
-            if (ItemInventory[0][itemNumber] <= 0){
-                cout << ItemName[0][itemNumber] << " is out of stock" << endl;
-                ItemIvventory
+            for (i = 0; i < 10;i++){
+            if (ItemInventory[i] < 0){
+                ItemInventory[i] = 0;
             }
-            cout << "Amount in Stock: " << ItemInventory[0][i] << " | Item Name: " << ItemName[0][i] << " | Price: $" << setprecision(2) << fixed << ItemPrice[0][i] << " | Item Number: " << ItemNumber[0][i] << endl;
+            cout << "Amount in Stock: " << ItemInventory[i] << " | Item Name: " << ItemName[i] << " | Price: $" << setprecision(2) << fixed << ItemPrice[i] << " | Item Number: " << ItemNumber[i] << endl;
+            }
+            
+        cout << endl;
+        cout << "How many different items would you like to buy?" << endl;
+        cin >> AmountOfItems;
+        string ShoppingCart[AmountOfItems];
+        int NumberOfItem[AmountOfItems];
+        for (j = 0; j < AmountOfItems; j++){
+        
+            cout << "Enter the amount of the item that you would like to buy, then the Item Number." << endl;
+            cin >> ItemAmount >> itemNumber;
+            
+            
+            
+            if (ItemAmount > ItemInventory[itemNumber]){
+                cout << "We only have " << ItemInventory[itemNumber] << " " << ItemName[itemNumber] << "s left, would you like to buy any?(y/n)" << endl;
+                cin >> OutOfStock;
+                if (OutOfStock == 'y' || OutOfStock == 'Y'){
+                    cout << "How many " << ItemName[itemNumber] << "'s would you like to buy? We Currently have " << ItemInventory[itemNumber] << " in stock." << endl;
+                    cin >> itemNumber;
+                    ItemInventory[itemNumber] = ItemInventory[itemNumber] - ItemAmount;
+                    ShoppingCartPrice = (ItemPrice[itemNumber] * ItemAmount) + ShoppingCartPrice;
+                    ShoppingCart[j] = ItemName[itemNumber];
+                }
+                
+                if (OutOfStock == 'n' || OutOfStock == 'N'){
+                    cout << "Order for " << ItemAmount << " " << ItemName[itemNumber] << "'s has been canceled." << endl;
+                }
+            }
+            if (ItemAmount <= ItemInventory[itemNumber]){
+                ItemInventory[itemNumber] = ItemInventory[itemNumber] - ItemAmount;
+                ShoppingCartPrice = (ItemPrice[itemNumber] * ItemAmount) + ShoppingCartPrice;
+                ShoppingCart[j] = ItemName[itemNumber];
+                NumberOfItem[j] = ItemAmount;
+            }
         }
         
-        cout << endl;
-        cout << "Enter the the Item's name that you would like to buy, then the amount AFTER the item name." << endl;
-        cin >> itemNumber >> ItemAmount;
-        
         if (itemNumber < 10){
-        
-        
             
-        
+            cout << "You have ordered:" << endl;
+            for (j = 0; j < AmountOfItems; j++){
+            cout << ShoppingCart[j] << " | " << NumberOfItem[j] << endl;
+            
+            }
+            cout << endl;
+            cout << "Would you like to continue to checkout?(y/n)" << endl;
+            cin >> DoneShopping;
         
         
         }
@@ -91,6 +127,9 @@ int main(){
             cout << "Please Enter a Valid Item Number and amount." << endl;
             cin >> itemNumber >> ItemAmount;
         }
+    }
+    if (DoneShopping == 'y' || DoneShopping == 'Y'){
+        cout << "Your total comes out to: $" << setprecision(2) << fixed << ShoppingCartPrice;
     }
     return 0;
 }
