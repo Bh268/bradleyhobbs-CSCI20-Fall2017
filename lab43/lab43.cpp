@@ -11,8 +11,15 @@ using namespace std;
 class Shop{
     public:
     void PrintInventory();
+    void Inventory();
+    void ShoppingCart();
+    void TotalPrice();
     
     Shop();
+    
+    int Inventory(int ItemNumber, int AmountOfItem);
+    int ShoppingCart(int ItemNumber, int AmountOfItem);
+    int TotalPrice(int ItemNumber. int AmountOfItem);
     
     private:
     int ItemNumber_[];
@@ -23,6 +30,8 @@ class Shop{
 };
 
 Shop::Shop(){
+    Shop = 0;
+    
     int ItemInventory[10];
     string ItemName[10];
     double ItemPrice[10];
@@ -77,7 +86,6 @@ Shop::Shop(){
         ItemInventory_[i] = ItemInventory[i];
         ItemName_[i] = ItemName[i];
     }
-    return;
 }
 
 
@@ -94,14 +102,46 @@ void Shop::PrintInventory(){
             cout << "Amount in Stock: " << ItemInventory_[i] << " | Item Name: " << ItemName_[i] << " | Price: $" << setprecision(2) << fixed << ItemPrice_[i] << " | Item Number: " << ItemNumber_[i] << endl;
             }
             
-        return;
-    }
+    };
 
+void Shop::Inventory(){
+    
+}
+
+void Shop::ShoppingCart(){
+    
+}
+
+void Shop::TotalPrice(){
+    
+}
+
+int Shop::Inventory(int ItemNumber, int AmountOfItem){
+    if (AmountOfItem <= ItemInventory_[ItemNumber]){
+    ItemInventory_[ItemNumber] = ItemInventory_[ItemNumber] - AmountOfItem
+    }
+    if (AmountOfItem > ItemInventory_[ItemNumber]){
+        cout << "We only have " << ItemInventory_[ItemNumber] << " " << ItemName_ << "'s left" << endl;
+    }
+}
+
+int Shop::ShoppingCart(int ItemNumber, int AmountOfItem){
+    
+}
+
+int Shop::TotalPrice(int ItemNumber, int AmountOfItem){
+    
+}
 
 int main(){
     Shop Shop;
     
+    
+    
+    cout << "Welsome to the Shop, these are the current Items we have in Stock: " << endl;
     Shop.PrintInventory();
+    cout << "Type the Item Number of the Item you want then the amount of that item you want." << endl;
+    cin >> 
     
     return 0;
 }
